@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .smallbox{
+            height: 200px;
+            width: 200px;
+            background-color: teal;
+
+        }
+        .bigbox{
+            height: 400px;
+            width: 400px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const body = document.querySelector("body");
+        const box = document.createElement("div");
+        const btn = document.createElement("button");
+        btn.textContent="click me";
+        box.classList.add("smallbox");
+        body.appendChild(box);
+        body.appendChild(btn);
+ //       btn .addEventListener("click" , function(){
+ //           box.classList.toggle("big");
+ //       });
+
+    let flag =0;
+     btn.addEventListener("click" , function(){
+       if(flag==0){
+            box.classList.add("bigbox");
+           box.classList.remove("smallbox");
+           flag=1;
+       }
+        
+        else{
+            box.classList.add("smallbox");
+            box.classList.remove("bigbox");
+          flag=0;
+       }
+
+    })
+    
+
+    </script>
+    
+</body>
+</html>
